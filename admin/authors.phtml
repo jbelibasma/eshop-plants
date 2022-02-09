@@ -1,0 +1,25 @@
+<main class="authors">
+  <table class="table table border col-12">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">auteur</th>
+       <th scope="col">Nombre d'article</th>
+        <th scope="col">modifier</th>
+        <th scope="col">suuprimer</th>
+    </thead>
+    <tbody>
+    <?php foreach($authors as $author) : ?>
+      <tr>
+        <td><?=  $author['id']?></td>
+        <td><?=$author['name']?></td>
+        <td><?=  $author['countname']?></td>
+        <td><a class="btn btn-primary" href="updatauthors.php?idupdat=<?=  $author['id'] ?>">modifier</a></td>
+        <td><a class="btn btn-danger" href="deletauthors.php?idsupprime=<?= $author['id'] ?>">supprimer</a></td>
+
+      </tr>
+      <?php endforeach ;?>
+    
+    </tbody>
+  </table>
+</main>

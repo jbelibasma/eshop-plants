@@ -1,0 +1,53 @@
+#imghome{
+    background-image: url("img/plant-3.jpg") !important;
+    background-position: bottom 75%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 70vh;
+
+}
+.nav1{
+    display: flex;
+    justify-content:space-around;
+
+}
+.linksoc li{
+list-style-type: none;
+}
+#producthome{
+    flex-wrap: wrap;
+    margin-bottom: 2%;
+    padding-bottom: 2%;
+    background-color: white;
+    text-align: center;
+
+}
+#producthome .posts{
+    flex-basis: 25%;
+}
+#producthome .posts a{
+background-color: #af9066;
+width:100%;
+display: block;
+margin: 1 2%;
+padding: 2% 0;
+}
+#producthome .posts strong{
+    display: block;
+}
+
+q {
+    color: gray;
+    font-style: italic;
+  }
+.details{
+    display: flex;
+    justify-content: space-between !important;
+
+}
+.maindetail{
+    max-width: 150rem;
+    margin: auto;
+}
+  

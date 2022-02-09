@@ -1,0 +1,24 @@
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">image</th>
+      <th scope="col">products</th>
+      <th scope="col">description</th>
+      <th scope="col">modifier</th>
+      <th scope="col">supprimer</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <?php foreach($posts as $post):?>
+      <tr>
+        <td><img src="../img/<?=$post['image']?>"></td>
+        <td><?=$post['title']?></td>
+        <td><?=$post['content']?></td>
+        <td>Otto</td>
+        <td><bouttun>modifier</bouttun></td>
+        <td><bouttun>supprimer</bouttun></td>
+      </tr>
+    <?php endforeach ;?>
+  </tbody>
+</table>

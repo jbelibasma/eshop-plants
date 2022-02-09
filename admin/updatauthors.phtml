@@ -1,0 +1,11 @@
+<main class="updatauthors">
+  <form class="formcateg"action="updatauthors.php" method="post">
+    <input type="hidden" name="id" value="<?=$authorlist['id']?>"> 
+    <div class="form-group ">
+      <label for="exampleFormControlSelect1">authors</label>
+      <input type="text" name="author" id="author" value="<?=$authorlist['name']?>" >
+    </div>
+     
+    <input class="author" type="submit" value='enregistrer'>
+  </form>
+</main>

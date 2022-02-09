@@ -1,0 +1,11 @@
+<main class="updatcateg">
+  <form class="formcateg"action="updatcateg.php" method="post">
+    <input type="hidden" name="id" value="<?=$category['id']?>"> 
+    <div class="form-group ">
+      <label for="exampleFormControlSelect1">categories</label>
+      <input type="text" name="category" id="category" value="<?=$category['category']?>" >
+    </div>
+     
+    <input class="category" type="submit" value='enregistrer'>
+  </form>
+</main>

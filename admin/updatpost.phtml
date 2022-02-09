@@ -1,0 +1,41 @@
+<main class="updatpost">
+  <form action="updatpost.php" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="id" value="<?=$post['id']?>"> 
+      <table class="table table-borderless ">
+        <thead>
+          <tr>
+            <th scope="col">image</th>
+            <th scope="col">categories</th>
+            <th scope="col">authors</th>
+            <th scope="col">title</th>
+            <th scope="col">text de l'article</th>
+            <th scope="col">price</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody class="col-12">
+          <tr class="col-row">
+            <td class="col-2"><input type="file"  name="file" class="w-100"  value='<?=$post['image']?>'></td>
+            <td class="col-1">
+              <select class="form-control"  name="category" id="category">
+                <?php foreach ($categorys as $category):?>    
+                  <option value="<?= $category['id']?>"><?= $category['category']?></option>
+                <?php endforeach ;?>
+              </select>
+            </td>
+            <td class="col-1">
+              <select class="form-control"  name="authors" id="authors">
+                <?php foreach ($authors as $author):?>
+                  <option value="<?= $author['id']?>"><?= $author['name']?></option>
+                <?php endforeach ;?>
+              </select>
+            </td>
+            <td class="col-1"><input type="text" name="title" class="form-control" id="title" value="<?=$post['title']?>" ></td>
+            <td class="col-4"><textarea class="form-control" name="addarticle" id="addarticle" rows="3"><?= $post['content']?></textarea></td>
+            <td class="col-1"><input type="text" name="price" class="form-control" id="price" value="<?=$post['price']?>" ></td>
+            <td class="col-1"><input type="submit" value='enregistrer'></td>
+          </tr>
+        </tbody>
+      </table>
+  </form>
+</main>

@@ -1,0 +1,368 @@
+html{
+    font-size: 10px;
+}
+.nav1 p strong a{
+    font-size: 6rem;
+    color: #007e61    ;
+}
+.nav li a,.linksoc li a{
+    color: #248299 ;
+    font-size: 2rem;
+}
+.divimghead img{
+    width: 20rem;
+    height: 20rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#imghome{
+    background-image: url("../img/plant-3.jpg") !important;
+    background-position: bottom 75%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 70vh;
+    position: relative;
+    top:0;
+    left:0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+#homergb{
+    background-color: rgba(0,0,0, 0.3);
+
+
+}
+.linksoc{
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    transform: translate(10%-5%)
+}
+#section1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    color: white;
+    background-color: rgba(0,0,0, 0.1);
+    border-top-right-radius: 40%;
+    border-bottom-right-radius: 40%;
+
+
+
+
+}
+.shop {
+    background-color: black;
+    letter-spacing: 1rem;
+    padding: 2rem;
+    margin: 3rem 0;
+    color: #007e61;
+    font-weight: bold;
+}
+#section1 h1{
+flex-basis: 100%;
+text-align: center;
+font-family: 'Lobster', cursive;
+padding: 2rem;
+margin: 2rem 0;
+font-size: 4rem;
+}
+#section1 div{
+    flex-basis: 30%;
+    font-size: 1rem;
+    text-align: center;
+}
+.nav ul li .nav-link{
+    font-size: 3rem;
+
+}
+.nav1 p{
+    margin-left: 7rem;
+}
+.linksoc li{
+list-style-type: none;
+}
+.description{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-size: 2rem;
+    margin: 5rem 2rem;
+}
+.description h2{
+    flex-basis: 100%;
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    
+}
+.description article {
+    flex-basis: 45%;
+}
+#producthome{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 2%;
+    padding-bottom: 2%;
+    background-color: white;
+    text-align: center;
+
+}
+#producthome .posts,.producthome .posts{
+    flex-basis: 30% !important;
+}
+#producthome img,.producthome img{
+    width: 100%;
+    height: 50%;
+}
+#producthome .posts .btn,.producthome .posts .btn{
+background-color: #af9066;
+width:100%;
+display: block;
+margin: 1 2%;
+padding: 2% 0;
+}
+#producthome .posts .nav-link
+,.producthome .posts .nav-link{
+    color: darkgoldenrod;
+    font-size: 2rem;
+}
+
+#link-shop{
+    font-size: 2rem;
+    font-weight: bold;
+}
+#divlink_shop{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    margin-bottom: 3rem;
+}
+#producthome .posts strong,.producthome .posts strong{
+    display: block;
+}
+
+q {
+    color: gray;
+    font-style: italic;
+  }
+.details{
+    display: flex;
+    justify-content: space-around !important;
+
+}
+.maindetail{
+    max-width: 150rem;
+    margin: auto;
+}
+.slid{
+    position: absolute;
+    top: 40%;
+    font-size: 4rem;
+    color: blanchedalmond;
+    cursor: pointer;
+  }
+  .bi-chevron-compact-left{
+    left: 4rem;
+  }
+  .bi-chevron-compact-right{
+    right: 4rem;
+  }
+
+#slider{
+width: 100%;
+}  
+#imgdetails{
+background-image: url("../img/PerfectContainers\ banner.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+width: 100vw;
+height: 50vh;
+
+
+}
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}
+.flexslider{
+width: 100vw;
+height: 50vh;
+
+}
+.flexslider .img1{
+background-image: url('../img/Plants\ winter\ banner.jpg');
+background-size: contain;
+background-repeat: no-repeat;
+width: 100%;
+height: 100%;
+}
+.flexslider .img2{
+    background-image: url('../img/pots\ HP\ banner.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    }
+
+.flexslider .img3{
+        background-image: url('../img/Seedsbulbs\ Banner.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        }
+        
+.flexslider{
+    list-style:none ;
+    margin: 0;
+    padding: 0;
+}
+.bi-chevron-compact-up{
+    cursor: pointer;
+}
+.register .form div input{
+    padding: 2rem 0;
+}
+.register{
+    font-size: 1.5rem;
+}
+.register .form .input{
+    font-size: 1.25rem;
+}
+
+/*** footer ****/
+
+
+.footer{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    text-align: center;
+    background-color: #eaefed;
+
+}
+.footer div{
+    flex-basis: 20%;
+    font-size: 2rem;
+}
+footer .delivery{
+    display: flex;
+    justify-content: space-around;
+    background-color:#99aea5
+    ;
+    align-items: center;
+    font-size: 2rem;
+    margin-top: 2rem;
+    
+}
+footer .delivery img{
+    width: 10%;
+    height: 10%;
+}
+.social{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #eaefed ;
+}
+.social ul{
+    list-style: none;
+
+}
+.social ul li i{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: black;
+    padding-left: 1rem;
+}
+.social select{
+font-size: 2rem;
+}
+.clearfix, .clearfix nav ul{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+.clearfix ul{
+list-style: none;
+margin: 3rem 0;
+}
+.clearfix nav ul li{
+    flex-basis: 20%;
+
+}
+.clearfix nav ul li a{
+    text-decoration: none;
+    font-size: 2rem;
+    color: #007e61;
+    padding-left: 2rem;
+    font-weight: bold;
+}
+.cart-fav-search a{
+    font-size: 1.6rem;
+    color: #007e61;
+    text-decoration: none;
+    font-weight: 600;
+    padding-left: 1rem;
+}
+.cart-fav-search a:hover,.clearfix nav ul li a:hover{
+    color: #af9066;
+    text-decoration: none;
+}
+.cart-fav-search{
+    margin: 3rem 0;
+}
+
+.updatpost,#mainpost, .categorypost,.formcateg{
+    font-size: 1.6rem;
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: #cedbd6;
+    text-align: center;
+}
+.formcateg  #category{
+ text-align: center;
+ padding: 1.25rem 12rem;
+ margin: auto;
+ border: none;
+ margin: 2rem 0;
+}
+.formcateg .category,.updatauthors .author{
+    margin-left: 7rem;
+    background-color: #248299;
+    padding: 1rem 1.5rem;
+}
+.formcateg label{
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 0 2rem;
+}
+.tablepost table, .formcateg input, .authors table{
+    font-size: 1.4rem;
+}
+.authors{
+    padding: 2rem 0;
+    margin: 2rem 3rem;
+    text-align: center;
+}
+.table  tr td a{
+    font-size: 1.2rem;
+    padding: 0.5rem 0.8rem;
+}
+.updatpost table,#mainpost table, .tablepost, .categorypost table, .updatcateg, .authors  {
+    background-color: #cedbd6;
+}
+.updatpost input, .updatpost textarea, .updatpost select,#mainpost input ,#mainpost textarea, #mainpost select{
+    font-size: 1.4rem;
+    resize: none;
+    border: none;
+
+}
+

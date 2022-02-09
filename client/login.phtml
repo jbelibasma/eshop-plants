@@ -1,0 +1,39 @@
+<main class="margin-auto">
+    <section class="section-header btn-success py-2 text-center ">
+        <i class="bi  bi-chevron-compact-up text-success"></i>
+        <ul class=slire>
+            <li class=" slidregis show">Score 15% off pet-friendly and classic plant subscriptions. Terms apply.</li>
+            <li class= "slidregis hide">Looking for a last minute gift? Shop our Digital Gift Cards!</li>
+            <li class= "slidregis hide">Up to 50% off top-selling Plants, Planters, and Bundles!</li>
+
+        </ul>
+    </section>
+    <sectin class="container col-12">
+        <article class="row">
+            <div class="register offset-2 col-3  ">
+                <span>Account</span>
+                <h2>Log in to your account</h2>
+                <span>D'ont have an account? <a href='register.php' class=' text-success'>create one <i class="bi bi-arrow-right font-weight-bold"></i></a>
+            </div>
+            <div class="register offset-1 col-5">
+                <?php if(isset($message)):?>
+                    <p><?= $message ?></p>
+                <?php endif ;?>
+                <form class="form" action="login.php" method="post">
+                <input type="hidden" class="form-control" name="id" id="id" value="<?php $user['id']?>">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" name="email" id="adressmail" aria-describedby="emailHelp">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+                    </div>
+                    <input type="submit" class="btn btn-success d-block m-auto col-2 py-3 input" value="create">
+                </form>
+            </div>
+        </article>
+    </sectin>
+    <script src='../js/regis.js'></script>
+</main>

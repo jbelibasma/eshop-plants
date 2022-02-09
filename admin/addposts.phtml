@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="../css/style.css">
+<main id="mainpost">
+    <form  action="addposts.php" method="post" enctype="multipart/form-data">
+                            <table class="table border">
+                                <thead>
+                                    <tr>
+                                    <th scope="col">image</th>
+                                    <th scope="col">product</th>
+                                    <th scope="col">description</th>
+                                    <th scope="col">price</th>
+                                    <th scope="col">authors</th>
+                                    <th scope="col">category</th>
+                                    <th scope="col"></th>
+
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="file"  name="file" class="w-100" /></td>
+                                        <td><input type="text" name="title" class="form-control"  ></td>
+                                        <td><textarea name="content" class="form-control"  rows="3"></textarea></td>
+                                        <td><input type="text" name="price" class="form-control"  ></td>
+                                        <td>
+                                            <select class="form-control"  name="authors" id="authors">
+                                                <?php foreach ($authors as $author):?>
+                                                <option value="<?= $author['id']?>"><?= $author['name']?></option>
+                                                <?php endforeach ;?>
+                                            </select>
+                                        </td>
+
+                                        <td>      
+                                            <select class="form-control"  name="category" id="category">
+                                                <?php foreach ($categorys as $category):?>
+                                                    
+                                                <option value="<?= $category['id']?>"><?= $category['category']?></option>
+                                                <?php endforeach ;?>
+                                            </select>
+                                        </td>
+                                        <td><input type="submit" class="btn  border btn-danger" value="enregistrer"></td>
+                                     </tr>
+
+                                </tbody>
+                            </table>
+    </form>
+</main>

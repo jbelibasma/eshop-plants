@@ -1,0 +1,56 @@
+<main id="shop">
+    <section id="slider">
+        <!-- <div>
+            <figure class="photos photos1">
+                <img  src="img/plant-1.jpg" alt="product1">
+            </figure>
+        </div> -->
+        <div>
+            <ul class="flexslider">
+                <li class=" img1 item-slider show"></li>
+                <li class=" img2 item-slider hide"></li>
+                <li class=" img3 item-slider hide"></li>
+            </ul>
+        </div>
+        <i class="bi slid bi-chevron-compact-right"></i>
+        <i class="bi slid bi-chevron-compact-left"></i>
+
+
+
+    </section>
+    <div id="divlink_shop" class="shadow-sm">
+    <?php foreach($categories as $category):?>
+            <a class="btn link text-success " id="link-shop" href="#<?= $category['id']?> " data-id="category<?=$category['id']?>"><?= $category['category']?></a>
+    <?php endforeach ;?>
+    </div>
+
+    <?php foreach($categories as $category):?>
+        <section class="details producthome " id="category<?php $category['id']?>"> 
+            <?php if($category['id']==4):?>
+                <div class="div categoryall" data-id="category<?= $category['id']?>" id="category<?=$category['id']?>">
+            <?php else :?>
+                <div class="div categoryall hide" data-id="category<?= $category['id']?>" id="category<?=$category['id']?>">
+            <?php endif ;?>
+               <?php foreach($posts as $post):?>
+                    <?php if($post['category-id']==$category['id']):?>
+                        <article class="posts">
+                            <h2><?= $post['title']?></h2>
+                                <img src="../img/<?=$post['image']?>" alt="product1">
+                                <h3><?= $post['category']?></h3>
+                                <p><?= $post['descript']?></p>
+                                <q><strong>crated by <?= $post['lastName']?><?= $post['firstName']?> </strong></q>
+                                <a class="btn btn-primary" href="details.php?idpostrecup=<?= $post['pid'] ?>"> VOIR CE PRODUIT</a>
+                        </article>
+                    <?php endif;?>
+                <?php endforeach ;?>
+                </div>
+                </div>
+
+
+        </section>
+    <?php endforeach ;?>
+
+    <script src='../js/slider.js'></script>
+    <script src=../js/shop.js></script>
+
+</main>

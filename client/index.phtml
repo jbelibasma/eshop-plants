@@ -1,0 +1,47 @@
+<main>
+	<div id="homergb">
+    	<div id="imghome">
+			<section id="section1" class="col-6">
+				<h1><strong><em>Bring The Beauty <br> of Nature To Your Home</em></strong></h1>
+				<div class="div1">
+					<h2>SEASONAL PLANTS</h2>
+					<span>Not everyone has a natural green thumb, but that’s ok because there are plenty of hard-to-kill houseplants .</span>
+
+				</div>
+				<div class="div1">
+					<h2>SEASONAL PLANTS</h2>
+					<span>First, you’ll have to evaluate your space: is it a room that gets direct sunlight.</span></div>
+				<div class="div1">
+					<h2>SEASONAL PLANTS</h2>
+					<span>If you rather be on the safe side and are looking for a zero-maintenance plant.</span>
+				</div>
+			<a href="shop.php" class="shop">Shop Now<i class="bi bi-arrow-right font-weight-bold"></i></a>
+			</section>
+    	</div>
+	</div>
+	<section class="description offset-3 col-6">
+		<h2 class="shadow-sm">Our Nursery</h2>
+		<article class="articledesc"><p>The paddle plant is a bold succulent that has big, round leaves with pink tips. These plants favor bright light so you can have it sit right on a sunny windowsill to soak in all the rays. These also like to be on the drier side, so don’t worry if you forget to water from time to time — they can take it!</p></article>
+		<article class="articledesc"><p>Having a full and vibrant palm in your home is always a nice addition and the lady palm is a great one to start off with. Unlike other types of palms, this one is easier to care for and only needs indirect sunlight.</p></article>
+	</section>
+    <section class="details  " id="producthome">
+        <?php foreach($posts as $post):?>
+				<article class="posts">
+					<h2><?= $post['title']?></h2>
+						<img id="image" src="../img/<?=$post['image']?>" alt="product1">
+						<h3><?= $post['category']?></h3>
+						<p><?= $post['descript']?></p>
+						<q><strong>crated by <?= $post['name']?> </strong></q>
+						<div class="d-flex justify-content-center align-items-center">
+							<span><strong>price<?= $post['price']?> </strong></span>
+							<a class="nav-link font-weight-bold" href="panier.php"><i class="bi bi-cart-fill"></i></a>
+						</div>
+							<a class="btn btn-primary" href="details.php?idpostrecup=<?= $post['pid'] ?>"> VOIR CE PRODUIT</a>
+				</article>
+        <?php endforeach ;?>
+
+    </section>
+
+      
+
+</main>
