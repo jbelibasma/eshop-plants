@@ -320,7 +320,7 @@ margin: 3rem 0;
     margin: 3rem 0;
 }
 
-.updatpost,#mainpost, .categorypost,.formcateg{
+.updatpost,#mainpost, .categorypost,.formcateg, .addcateg{
     font-size: 1.6rem;
     margin-top: 3rem;
     padding: 2rem;
@@ -344,7 +344,7 @@ margin: 3rem 0;
     font-size: 2rem;
     padding: 0 2rem;
 }
-.tablepost table, .formcateg input, .authors table{
+.tablepost table, .formcateg input, .authors table, .addcateg table{
     font-size: 1.4rem;
 }
 .authors{
