@@ -18,7 +18,7 @@
     <header>
         <!-- <div class="divimghead"><img src="../photos/leaf-footer.png" alt=""></div> -->
         <div class="nav1">
-            <p class=""><strong><a href=#>shop plants</a></strong></p>
+            <p ><strong><a href="#" class="p-title" ><span class="title">Shop</span> Plants</a></strong></p>
             <ul class="linksoc">
                 <li>
                     <a href="#"><i class="bi bi-facebook"></i></a>
@@ -53,6 +53,39 @@
             </li>
 
         </ul>
+        <?php if(isset($_SESSION['roles'])):?>
+            <div class="header-area clearfix">
+                <!-- Close Icon -->
+                <div class="nav-close">
+                    <i class="fa fa-close" aria-hidden="true"></i>
+                </div>
+                <!-- Amado Nav -->
+                <nav class="amado-nav">
+                    <ul>
+                        <li class="active"><a href="admin.php">posts</a></li>
+                        <li><a href="category.php">categories</a></li>
+                        <li><a href="authors.php">authors</a></li>
+                        <li><a href="product-details.html">commandes</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                        <li><a href="addposts.php">add posts</a></li>
+                        <li><a href="addcateg.php">add category</a></li>
+                        <li><a href="addauthors.php">add author</a></li>
+
+
+                    </ul>
+                </nav>
+                <!-- Button Group -->
+                <!-- Cart Menu -->
+                <div class="cart-fav-search mb-100">
+                    <a href="cart.html" class="cart-nav">Cart <span class="cart-quant">(0)</span></a>
+                    <a href="#" class="fav-nav">Favourite</a>
+                    <a href="#" class="search-nav">Search</a>
+                </div>
+
+            </div>
+        <?php endif;?>
+
+
 
         <?php include $template; ?>
     </header>
@@ -92,7 +125,7 @@
                 <option value="fr-paris"><span class="text">Paris - French</span></option>
                 <option value="gb-london"><span class="text">UK - English</span></option>
             </select>        
-            <ul class="">
+            <ul class="social-footer">
                     <li>
                         <a href="#"><i class="bi bi-facebook"></i></a>
                         <a href="#"><i class="bi bi-twitter"></i></a>

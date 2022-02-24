@@ -1,4 +1,5 @@
 <?php
+session_start();
 $dbh = new PDO('mysql:host=localhost;dbname=shop_plants',
 'root','');
 if(!empty($_POST)){

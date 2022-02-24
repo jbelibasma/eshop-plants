@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $dbh = new PDO('mysql:host=localhost;dbname=shop_plants',
 'root','');
 $supp=$_GET['idsupprime'];

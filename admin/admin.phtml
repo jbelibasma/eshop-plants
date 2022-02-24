@@ -1,39 +1,5 @@
 
-
-        <!-- Header Area Start -->
-        <header class="header-area clearfix">
-            <!-- Close Icon -->
-            <div class="nav-close">
-                <i class="fa fa-close" aria-hidden="true"></i>
-            </div>
-            <!-- Amado Nav -->
-            <nav class="amado-nav">
-                <ul>
-                    <li class="active"><a href="admin.php">posts</a></li>
-                    <li><a href="category.php">categories</a></li>
-                    <li><a href="authors.php">authors</a></li>
-                    <li><a href="product-details.html">commandes</a></li>
-                    <li><a href="cart.html">Cart</a></li>
-                    <li><a href="addposts.php">add posts</a></li>
-                    <li><a href="addcateg.php">add category</a></li>
-                    <li><a href="addauthors.php">add author</a></li>
-
-
-                </ul>
-            </nav>
-            <!-- Button Group -->
-            <!-- Cart Menu -->
-            <div class="cart-fav-search mb-100">
-                <a href="cart.html" class="cart-nav">Cart <span>(0)</span></a>
-                <a href="#" class="fav-nav">Favourite</a>
-                <a href="#" class="search-nav">Search</a>
-            </div>
-            <!-- Social Button -->
-        </header>
-        <!-- Header Area End -->
-
-        <!-- Product Catagories Area Start -->
-    <main class="tablepost">
+<main class="tablepost">
         <table class="table border col-12">
             <thead>
                 <tr>
@@ -49,7 +15,7 @@
             <tbody>
                 <?php foreach($posts as $post):?>
                     <tr>
-                        <td><img src="../img/<?= $post['image']?>" class="w-100" /></td>
+                        <td class="col-2 offset-1"><img src="../img/<?= $post['image']?>" class="w-100" /></td>
                         <td><?=$post['title']?></td>
                         <td><?=$post['content']?></td>
                         <td><?=$post['price']?></td>

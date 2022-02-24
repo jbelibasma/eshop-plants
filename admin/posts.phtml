@@ -1,7 +1,7 @@
 <table class="table table-sm">
   <thead>
     <tr>
-      <th scope="col">image</th>
+      <th scope="col-4">image</th>
       <th scope="col">products</th>
       <th scope="col">description</th>
       <th scope="col">modifier</th>
@@ -12,7 +12,7 @@
   <tbody>
     <?php foreach($posts as $post):?>
       <tr>
-        <td><img src="../img/<?=$post['image']?>"></td>
+        <td class="post-img col-2"><img  src="../img/<?=$post['image']?>"></td>
         <td><?=$post['title']?></td>
         <td><?=$post['content']?></td>
         <td>Otto</td>

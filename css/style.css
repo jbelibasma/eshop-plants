@@ -1,13 +1,54 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 html{
     font-size: 10px;
 }
-.nav1 p strong a{
-    font-size: 6rem;
-    color: #007e61    ;
+body{
+    font-family: 'Rubik', sans-serif;
+    font-size: 2rem;
+
 }
-.nav li a,.linksoc li a{
+.title{
+    color: #007e61;
+
+}
+.nav1 p strong a{
+    padding-top: 2rem;
+    font-size: 4rem;
+    color: #af9066;
+}
+.p-title:hover{
+    color:#ffc209;
+    text-decoration: none;
+}
+
+.nav li a,.linksoc li a,.social-footer li a .bi{
     color: #248299 ;
     font-size: 2rem;
+}
+.nav li a:hover{
+    color: #ffc209;
+}
+.linksoc{
+    position: absolute;
+    top: 8%;
+    right: 5%;
+    transform: translate(8%-5%);
+
+}
+.linksoc li a{
+    padding: 0.5rem;
+    border-radius: 50%;
+    font-size: 1.5rem;
+
+}
+.linksoc li a:hover, .social-footer a .bi:hover{
+    background-color:#007e61;
+    color: #af9066;
+
 }
 .divimghead img{
     width: 20rem;
@@ -15,6 +56,9 @@ html{
     position: absolute;
     top: 0;
     right: 0;
+}
+.clearfix div{
+    font-size: 1.6rem;
 }
 #imghome{
     background-image: url("../img/plant-3.jpg") !important;
@@ -46,6 +90,7 @@ html{
     flex-wrap: wrap;
     justify-content:space-around;
     color: white;
+    font-size: 2rem;
     background-color: rgba(0,0,0, 0.1);
     border-top-right-radius: 40%;
     border-bottom-right-radius: 40%;
@@ -72,8 +117,10 @@ font-size: 4rem;
 }
 #section1 div{
     flex-basis: 30%;
-    font-size: 1rem;
+    font-size: 2rem;
     text-align: center;
+    font-family: 'Rubik', sans-serif;
+
 }
 .nav ul li .nav-link{
     font-size: 3rem;
@@ -276,34 +323,57 @@ footer .delivery img{
     list-style: none;
 
 }
-.social ul li i{
-    font-size: 3rem;
-    margin-bottom: 2rem;
-    color: black;
-    padding-left: 1rem;
-}
-.social select{
-font-size: 2rem;
-}
-.clearfix, .clearfix nav ul{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-}
-.clearfix ul{
-list-style: none;
-margin: 3rem 0;
-}
-.clearfix nav ul li{
-    flex-basis: 20%;
+.social-footer li a .bi{
+    font-size: 2rem;
+    padding: 0.25rem;
+    border-radius: 100%;
 
 }
-.clearfix nav ul li a{
+.social select{
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    outline: none;
+    border: none;
+}
+.clearfix, .clearfix nav ul{
+    width: 70vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    margin-left: 5rem;
+}
+.clearfix ul, .clearfix div{
+list-style: none;
+margin: 3rem 0;
+flex-basis: 25%;
+
+}
+.clearfix nav ul li{
+    font-size: 1.5rem;
+
+}
+.cart-fav-search{
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}
+.clearfix  .cart-fav-search a{
+    flex-basis: 35% !important;
+    padding: 0 2rem;
+}
+.clearfix  .cart-fav-search a span{
+    border: 1px solid red;
+}
+.clearfix nav ul li a, .cart-fav-search a{
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: #007e61;
     padding-left: 2rem;
     font-weight: bold;
+}
+.cart-nav{
+    border: 1px solid red;
 }
 .cart-fav-search a{
     font-size: 1.6rem;
@@ -364,5 +434,10 @@ margin: 3rem 0;
     resize: none;
     border: none;
 
+}
+.table tbody tr .post-img img{
+    width: 20%;
+    height: 20%;
+    border: 1px solid red;
 }
 
