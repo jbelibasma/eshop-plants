@@ -27,14 +27,16 @@
     <section class="details  " id="producthome">
         <?php foreach($posts as $post):?>
 				<article class="posts">
-					<h2><?= $post['title']?></h2>
-						<img id="image" src="../img/<?=$post['image']?>" alt="product1">
+						<input type="hidden" name="id" value="$post['id']" >
+						<h2><?= $post['title']?></h2>
+						<img  id="imageId" src="../img/<?=$post['image']?>" alt="product1">
 						<h3><?= $post['category']?></h3>
 						<p><?= $post['descript']?></p>
 						<q><strong>crated by <?= $post['name']?> </strong></q>
-						<div class="d-flex justify-content-center align-items-center">
-							<span><strong>price<?= $post['price']?> </strong></span>
-							<a class="nav-link font-weight-bold" href="panier.php"><i class="bi bi-cart-fill"></i></a>
+						<div class="d-flex justify-content-around align-items-center">
+							<span>price<strong id="strong"><?= $post['price']?> </strong></span>
+							<input class="product_count_item input-number col-1" id="quantity" name="quantity" type="text" value="1" min="0" max="10">
+							<Button class="nav-link font-weight-bold "><i class="bi bi-cart-fill" id="save" ></i></Button>
 						</div>
 							<a class="btn btn-primary" href="details.php?idpostrecup=<?= $post['pid'] ?>"> VOIR CE PRODUIT</a>
 				</article>
@@ -43,5 +45,5 @@
     </section>
 
       
-
+<script src="../js/shop.js"></script>
 </main>

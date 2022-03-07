@@ -6,4 +6,4 @@ $query->execute();
 $posts=$query->fetchAll();
 
 $template= 'posts.phtml';
-include '../client/layout.phtml';
+include "template.phtml";

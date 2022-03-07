@@ -55,4 +55,4 @@ $query->execute();
 $authors = $query->fetchAll();
 
 $template="updatpost.phtml";
-include '../client/layout.phtml';
+include "template.phtml";

@@ -12,5 +12,4 @@ $categories=$query2->fetchAll();
 
 
 $template= 'category.phtml';
-include '../client/layout.phtml';
-// SELECT COUNT(`category`) as count FROM `categories` GROUP BY `category`
+include "template.phtml";

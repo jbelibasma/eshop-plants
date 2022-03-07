@@ -1,51 +1,35 @@
-$('#save').on('click', onClickSave);
-let carts = loadpanier('panier');
-  function onClickSave() {
 
-  
-// Création d'un objet cart .
-          const cart = {
-              id: $('input[name=id]').val(),
-              img: $('#prodImg').attr('src'),
-              name: $('h6').text(),
-              prix: $('strong').html(),
-              quantity: $('#quantity').val(),
-          }
-     // id produit qui ajouter = id produit ds panier      
-          let qt= carts.find(key=>key.id==cart.id);
-       
-          if(qt!=undefined){
-              cart.quantity=parseInt( cart.quantity);
-              qt.quantity=parseInt( qt.quantity);
-              let index = carts.indexOf(qt);
-              carts[index]['quantity']+=cart.quantity;
-        
+'use strict';
 
-          }
-          else{
-              carts.push(cart);
 
-          }
-          saveStorage(carts, 'panier');
+function ShowPanier() {
 
-       
-          // refreshpanier();
-  }
-  
+    const  carts = loadpanier('panier');
+
+    if (carts ==null) {
+        $('#product').html($('<p>').text('panier vide'));
+        return ;
+    }
+
+
     
+    carts.forEach(function(cart){
 
-  function loadpanier(panier) {
-      var storage = JSON.parse(localStorage.getItem(panier));
-      if (storage == null)
-          storage = [];
-      return storage
-  }
+        let tr = $('<tr>');
+        tr.append('<td><img class="w-25" src="'+cart.img+'"></td>');
+        tr.append('<td>'+cart.name+'</td>');
+        tr.append('<td>'+cart.prix+'</td>');
+        tr.append('<td>'+cart.quantity+'</td>');
+        tr.append('<td>'+cart.quantity * cart.prix +'</td>');
 
-  function saveStorage(data, panier) {
-      var storage = JSON.stringify(data);
-      localStorage.setItem(panier, storage);
-  }
- 
+    $('#product').append(tr);
+    console.log(tr);
+})}
+ShowPanier()
+
+
+
+
 
 
 

@@ -27,7 +27,7 @@ body{
 
 .nav li a,.linksoc li a,.social-footer li a .bi{
     color: #248299 ;
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 .nav li a:hover{
     color: #ffc209;
@@ -42,7 +42,7 @@ body{
 .linksoc li a{
     padding: 0.5rem;
     border-radius: 50%;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
 
 }
 .linksoc li a:hover, .social-footer a .bi:hover{
@@ -149,7 +149,7 @@ list-style-type: none;
 .description article {
     flex-basis: 45%;
 }
-#producthome{
+#producthome, .shopcategory  {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -159,25 +159,41 @@ list-style-type: none;
     text-align: center;
 
 }
-#producthome .posts,.producthome .posts{
+
+#producthome .posts,.shopcategory .posts{
     flex-basis: 30% !important;
 }
-#producthome img,.producthome img{
-    width: 100%;
-    height: 50%;
+#producthome .posts img,.shopcategory .posts img{
+    width: 100vw;
+    height: 50vh;
 }
-#producthome .posts .btn,.producthome .posts .btn{
+#producthome .posts h2{
+    text-align: left;
+    margin-left: 2rem;
+}
+    
+    
+#producthome .posts .btn,.productshop .posts .btn{
 background-color: #af9066;
 width:100%;
 display: block;
 margin: 1 2%;
 padding: 2% 0;
+
 }
 #producthome .posts .nav-link
 ,.producthome .posts .nav-link{
     color: darkgoldenrod;
     font-size: 2rem;
 }
+.productshop .shop .posts img{
+    width: 100vw;
+    height: 50vh;
+}
+.productshop .shop .posts{
+    flex-basis: 30%;
+}
+
 
 #link-shop{
     font-size: 2rem;
@@ -197,11 +213,7 @@ q {
     color: gray;
     font-style: italic;
   }
-.details{
-    display: flex;
-    justify-content: space-around !important;
 
-}
 .maindetail{
     max-width: 150rem;
     margin: auto;
@@ -362,18 +374,12 @@ flex-basis: 25%;
     flex-basis: 35% !important;
     padding: 0 2rem;
 }
-.clearfix  .cart-fav-search a span{
-    border: 1px solid red;
-}
 .clearfix nav ul li a, .cart-fav-search a{
     text-decoration: none;
     font-size: 1.6rem;
     color: #007e61;
     padding-left: 2rem;
     font-weight: bold;
-}
-.cart-nav{
-    border: 1px solid red;
 }
 .cart-fav-search a{
     font-size: 1.6rem;

@@ -24,4 +24,4 @@ $category=$query->fetch();
 
 
 $template= 'updatcateg.phtml';
-include '../client/layout.phtml';
+include "template.phtml";

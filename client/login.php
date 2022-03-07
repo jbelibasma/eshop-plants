@@ -12,6 +12,7 @@ else
         $user=$query->fetch();
         if(!empty($user)){
             $pswd=$_POST['password'];
+            
             if(password_verify($pswd,$user['password'])==false)
             {
                 $message='password incorrect';

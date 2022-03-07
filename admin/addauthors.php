@@ -15,4 +15,4 @@ $category->execute();
 $categorys=$category->fetchAll();
 
 $template= "addauthors.phtml";
-include "../client/layout.phtml";
+include "template.phtml";

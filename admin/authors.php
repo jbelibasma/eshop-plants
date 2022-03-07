@@ -13,4 +13,4 @@ $authors=$query2->fetchAll();
 
 
 $template= 'authors.phtml';
-include '../client/layout.phtml';
+include "template.phtml";

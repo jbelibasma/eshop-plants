@@ -1,8 +1,11 @@
-function loadData(carts){
- const jsonData=window.localStorage.getItem(carts);
- return JSON.parse(jsonData);
+function loadpanier(panier) {
+    var storage = JSON.parse(localStorage.getItem(panier));
+    if (storage == null)
+        storage = [];
+    return storage
 }
-function saveData(carts,panier){
-    const JSON=Stringify(jsonData);
-    window.localStorage.setItem(carts,panier); 
+
+function saveStorage(data, panier) {
+    var storage = JSON.stringify(data);
+    localStorage.setItem(panier, storage);
 }

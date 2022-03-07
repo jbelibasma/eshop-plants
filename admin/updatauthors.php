@@ -24,4 +24,4 @@ $authorlist=$query->fetch();
 
 
 $template= 'updatauthors.phtml';
-include '../client/layout.phtml';
+include "template.phtml";

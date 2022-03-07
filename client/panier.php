@@ -1,4 +1,4 @@
 <?php
 
-$template = 'panier.phtml';
-include 'layout.phtml';
+// $template = 'panier.phtml';
+include 'panier.phtml';

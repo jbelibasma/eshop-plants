@@ -7,10 +7,12 @@
 			<div class="row">
 				<article class="posts offset-3 col-6">
 					<h2 class="text-center p-0 m-0 mb-2"><?= $posts['title']?></h2>
-					<img src="../img/<?=$posts['image']?>" alt="product1">
+					<img id="imageId" src="../img/<?=$posts['image']?>" alt="product1">
 						<h3 class="text-center"><?= $posts['category']?></h3>
 						<p class="text-center"><?= $posts['content']?></p>
 						<q class="text-center"><strong>crated by <?= $posts['name']?> </strong></q>
+						<input class="product_count_item input-number" id="quantity" name="quantity" type="text" value="1" min="0" max="10">
+							<Button class="nav-link font-weight-bold "><i class="bi bi-cart-fill" id="save" ></i></Button>
 				</article>
 			</div>
 		</div>
@@ -18,7 +20,7 @@
 				<div class="row">
 					<form method="post" action="comments.php" class=" offset-3 col-6">
 						<div class="form-group">
-							<input type="hidden" id='id'  name="id" value="<?=$post['postid']?>">
+							<input type="hidden" id='id'  name="id" value="<?=$posts['postid']?>">
 							<label for="exampleFormControlInput1">pseudo</label>
 							<input type="text" name="pseudo" class="form-control" id="pseudo" >
 						</div>
@@ -34,5 +36,7 @@
 			</article>
 
     </section>
+	<script src="../js/shop.js"> </script>
+
 
 </main>

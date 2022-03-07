@@ -23,5 +23,4 @@ header('location:admin.php');
 exit();
 }
 $template="addposts.phtml";
-include "../client/layout.phtml";
-// include "addposts.phtml";
+include "template.phtml";

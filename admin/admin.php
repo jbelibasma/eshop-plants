@@ -5,4 +5,4 @@ $query=$bdh->prepare('SELECT `id`,`category-id`,`authors-id`,`content`,`title`,`
 $query->execute();
 $posts=$query->fetchAll();
 $template="admin.phtml";
-include "../client/layout.phtml";
+include "template.phtml";

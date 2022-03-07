@@ -16,4 +16,4 @@ $category->execute();
 $categorys=$category->fetchAll();
 
 $template= "addcateg.phtml";
-include "../client/layout.phtml";
+include "template.phtml";
