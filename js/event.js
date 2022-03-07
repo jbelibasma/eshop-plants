@@ -30,3 +30,16 @@ function onClickSupp(){
 
 }}
 
+/** btn menu mobil */
+let butn=document.querySelector('.mobil-nav');
+let menu=document.getElementById('menu-nav');
+console.log(menu)
+function showmenu(){
+    menu.classList.toggle('nav');
+    menu.classList.toggle('active-menu');
+
+}
+butn.addEventListener('click', showmenu);
+/** end menu mobil */
+
+

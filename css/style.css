@@ -27,7 +27,7 @@ body{
 
 .nav li a,.linksoc li a,.social-footer li a .bi{
     color: #248299 ;
-    font-size: 2.5rem;
+    font-size: 3rem;
 }
 .nav li a:hover{
     color: #ffc209;
@@ -444,6 +444,105 @@ flex-basis: 25%;
 .table tbody tr .post-img img{
     width: 20%;
     height: 20%;
-    border: 1px solid red;
 }
+.mobil-nav{
+    display: none;
+}
+
+/***** mobil *******/
+@media  screen and (max-width:767px)
+{
+    body{
+        font-size: 1.5rem;
+    }
+    main{
+        max-width: 70rem;
+        height: 100vh;
+    }
+    .nav li a{
+        padding-top: 2rem;
+        font-size: 1.5rem;
+    }
+    
+    
+    
+    .nav a{
+        padding-left: 1rem;
+
+    }
+    .active-menu li a{
+        color: #ffc209;
+        font-size: 2rem;
+        padding: 1rem 0;
+        margin: 0;
+
+    }
+    #producthome, .shopcategory  {
+        flex-direction: column-reverse;
+    }
+    .nav1 p strong a{
+        font-size: 2rem;
+    }
+    .linksoc{
+        top: 6%;
+        right: 2%;
+        transform: translate(6%-2%);
+    
+    }
+    .linksoc li a{
+        font-size: 1.5rem;
+    
+    }
+    #section1{
+        display: none;
+    
+    
+    
+    
+    }
+    
+    .description {
+        font-size: 1.5rem;
+        flex-direction: column;
+    }
+    
+    footer{
+        font-size: 1.25rem;
+        position: absolute;
+        top: 3000px;
+        right: 0%;
+        left: 0%;
+
+
+    }
+    
+         
+     
+    
+    
+ 
+    
+    
+}
+/*******tablette ***/
+@media  screen and (min-width:768px) and (max-width:1023px)
+{
+    main{
+        max-width: 100rem;
+        height: 100vh;
+    }
+    footer{
+        font-size: 1.25rem;
+        position: absolute;
+        top: 2500px;
+        right: 0%;
+        left: 0%;
+
+
+    }
+
+         
+     
+}
+
 
