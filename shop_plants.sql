@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : dim. 12 déc. 2021 à 20:18
+-- Généré le : lun. 14 mars 2022 à 15:19
 -- Version du serveur : 10.4.22-MariaDB
--- Version de PHP : 7.4.26
+-- Version de PHP : 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,19 +29,16 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `authors` (
   `id` int(20) NOT NULL,
-  `firstName` varchar(50) NOT NULL,
-  `lastName` varchar(50) NOT NULL
+  `name` varchar(50) NOT NULL,
+  `created-at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `authors`
 --
 
-INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES
-(1, 'basma', 'jbeli'),
-(2, 'amal', 'jbeli'),
-(3, 'hannen', 'jbeli'),
-(4, 'souad', 'jbeli');
+INSERT INTO `authors` (`id`, `name`, `created-at`) VALUES
+(4, 'aaaa', '2022-02-24 21:26:14');
 
 -- --------------------------------------------------------
 
@@ -52,7 +49,7 @@ INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES
 CREATE TABLE `categories` (
   `id` int(20) NOT NULL,
   `category` varchar(50) NOT NULL,
-  `created-at` timestamp NOT NULL DEFAULT current_timestamp()
+  `created-at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -60,8 +57,10 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `category`, `created-at`) VALUES
-(1, 'SEASONAL PLANTS', '2021-12-12 07:32:38'),
-(2, 'SEASONAL PLANTS', '2021-12-12 07:32:38');
+(1, 'climbers && shrubs', '2022-02-24 20:15:30'),
+(2, 'pots and containers', '2022-01-01 13:09:52'),
+(3, 'plants for instant impact', '2022-01-01 13:13:50'),
+(4, 'fruits and berries stems', '2022-01-01 13:13:50');
 
 -- --------------------------------------------------------
 
@@ -73,8 +72,35 @@ CREATE TABLE `comments` (
   `id` int(20) NOT NULL,
   `pseudo` varchar(50) NOT NULL,
   `comment` text NOT NULL,
-  `postid` int(20) NOT NULL,
-  `created-at` timestamp NOT NULL DEFAULT current_timestamp()
+  `post-id` int(20) NOT NULL,
+  `created-at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `orderlines`
+--
+
+CREATE TABLE `orderlines` (
+  `id` int(20) NOT NULL,
+  `order_id` int(20) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `prix` double NOT NULL,
+  `post_id` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(20) NOT NULL,
+  `user_id` int(20) NOT NULL,
+  `total` double NOT NULL,
+  `created-at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -85,20 +111,23 @@ CREATE TABLE `comments` (
 
 CREATE TABLE `posts` (
   `id` int(20) NOT NULL,
-  `title` varchar(50) NOT NULL,
   `category-id` int(20) NOT NULL,
   `authors-id` int(20) NOT NULL,
   `content` text NOT NULL,
-  `created-at` timestamp NOT NULL DEFAULT current_timestamp()
+  `title` varchar(50) NOT NULL,
+  `image` text NOT NULL,
+  `price` int(11) NOT NULL,
+  `created-at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `posts`
 --
 
-INSERT INTO `posts` (`id`, `title`, `category-id`, `authors-id`, `content`, `created-at`) VALUES
-(1, 'BOLD PINK CALLA LILY PLANT', 1, 2, 'One of the most unique flowers out there, calla lilies represent timeless beauty. The trumpet-shaped blooms are placed in a modern white planted to create a balanced expression of charm and elegance.\r\nThis plant is about 18\"H by 12\"W.\r\nComes in a white pot.\r\nPlace your plant in an bright indirectly lit area. For even growing, rotate your plant once a week. Thoroughly water the plant when soil is dry to the touch, about once a week to keep soil evenly moist. November is a good time to reduce watering, as the plant enters dormancy.\r\nThis plant is suitable for both indoors and outdoors, pending on climate.\r\n\r\n\r\n', '2021-12-12 07:50:20'),
-(2, 'SHIPPED IN A BOX', 1, 1, 'Prance into Christmas Eve with the Jollie Ollie succulent at the sleigh\'s helm. The ivory reindeer pot holds a classic Haworthia succulent that will thrive for many holidays to come.\r\nCare Tips: Succulents will continue to grow with indirect sunlight. Be sure to rotate your plant for even growth. Only water directly to the soil when it has dried out completely, as succulents can tolerate very dry conditions. In mild climates, succulents can grow outside with indirect sunlight.\r\n', '2021-12-12 09:06:52');
+INSERT INTO `posts` (`id`, `category-id`, `authors-id`, `content`, `title`, `image`, `price`, `created-at`) VALUES
+(10, 2, 4, 'lkjhgfd', 'f<sfdsdsq', '164573260816444086941641065929alpines-desktop-hero-1920x978.jpg', 10, '2022-02-24 19:56:48'),
+(12, 3, 4, 'aaaaaaaaaaaaaaaaaa', 'kkdkfdk', '1646913513rhs-sale-border-favourites-large.webp', 20, '2022-03-10 11:58:33'),
+(13, 2, 4, 'loremloremloremvvloremloremloremlorem\r\n', 'kldmdldlsmmms', '16465966541644407684berries-stems.webp', 100, '2022-03-06 19:57:34');
 
 -- --------------------------------------------------------
 
@@ -108,10 +137,21 @@ INSERT INTO `posts` (`id`, `title`, `category-id`, `authors-id`, `content`, `cre
 
 CREATE TABLE `users` (
   `id` int(20) NOT NULL,
-  `name` varchar(50) NOT NULL,
+  `firstName` varchar(50) NOT NULL,
+  `lastName` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `password` varchar(100) NOT NULL
+  `password` varchar(100) NOT NULL,
+  `roles` varchar(100) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`id`, `firstName`, `lastName`, `email`, `password`, `roles`) VALUES
+(1, 'jbeli', 'basma', 'jbelibasma22@gmail.com', '$2y$10$mOl0MhBj8iu.6eLynS6d3.ytwcyf3tCML7jJjCzzSnkhPCG4qosjy', '1'),
+(2, 'jbeli', 'souad', 'souad@gmail.com', '$2y$10$Wh.V4.emKnL8K0tWo99R0.BUQr6hn.Voc9qFIindV2Fs7y6xoHLNe', '0'),
+(3, 'jbeli', 'basma', 'basma@gmail.com', '$2y$10$pmAAeW3s4UDchrjjJPOnPeNUC/VMxtWsjKu4NaH7rnKceVEVyz4U.', '0');
 
 --
 -- Index pour les tables déchargées
@@ -134,7 +174,22 @@ ALTER TABLE `categories`
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `postid` (`postid`);
+  ADD KEY `post-id` (`post-id`);
+
+--
+-- Index pour la table `orderlines`
+--
+ALTER TABLE `orderlines`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `order_id` (`order_id`),
+  ADD KEY `post_id` (`post_id`);
+
+--
+-- Index pour la table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Index pour la table `posts`
@@ -158,7 +213,31 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `authors`
 --
 ALTER TABLE `authors`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT pour la table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT pour la table `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT pour la table `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT pour la table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Contraintes pour les tables déchargées
@@ -168,14 +247,27 @@ ALTER TABLE `authors`
 -- Contraintes pour la table `comments`
 --
 ALTER TABLE `comments`
-  ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`postid`) REFERENCES `posts` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`post-id`) REFERENCES `posts` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `orderlines`
+--
+ALTER TABLE `orderlines`
+  ADD CONSTRAINT `orderlines_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `orderlines_ibfk_2` FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `posts`
 --
 ALTER TABLE `posts`
-  ADD CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`authors-id`) REFERENCES `authors` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `posts_ibfk_2` FOREIGN KEY (`category-id`) REFERENCES `categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`category-id`) REFERENCES `categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `posts_ibfk_2` FOREIGN KEY (`authors-id`) REFERENCES `authors` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
